@@ -13,3 +13,6 @@ o.scrolloff = 20
 o.signcolumn = "yes"
 o.clipboard = "unnamedplus"
 
+if vim.fn.exists("&winborder") == 1 then
+  o.winborder = "rounded"
+end

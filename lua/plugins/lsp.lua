@@ -31,6 +31,18 @@ return {
         capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
       end
 
+      vim.diagnostic.config({
+        float = { border = "rounded" },
+      })
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+        vim.lsp.handlers.hover,
+        { border = "rounded" }
+      )
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+        vim.lsp.handlers.signature_help,
+        { border = "rounded" }
+      )
+
       vim.lsp.config("lua_ls", {
         on_attach = on_attach,
         capabilities = capabilities,

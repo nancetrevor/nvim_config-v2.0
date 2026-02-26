@@ -24,7 +24,7 @@ return {
 
       return {
         defaults = {
-          file_ignore_patterns = { "venv", "%.venv", "env", "__pycache__", ".git", "git" },
+          file_ignore_patterns = { "venv", "%.venv", "__pycache__", ".git", "git" },
           vimgrep_arguments = vimgrep_arguments,
         },
 
