@@ -1,27 +1,42 @@
-return
-{
-  'stevearc/oil.nvim',
+return {
+  "stevearc/oil.nvim",
   lazy = false,
   dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+
+  keys = {
+    {
+      "<leader>e",
+      function()
+        require("oil").open(nil, {
+          preview = {
+            vertical = true,
+            split = "botright",
+          },
+        })
+      end,
+      desc = "Open Oil with preview",
+    },
+  },
+
   opts = {
-      vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>"),
-      keymaps = {
-        ["l"] = "actions.select",
-        ["h"] = "actions.parent",
-        ["q"] = { "actions.close", mode = "n" },
-      },
-      view_options = {
-        show_hidden = true,
-    --     is_hidden_file = function(name, _)
-    --       if name:sub(1,1) == '.' then
-    --         return true
-    --       end
-    --
-    --       if name == "venv" or name == ".venv" then
-    --         return true
-    --       end
-    --       return false
-    --     end
+    keymaps = {
+      ["l"] = "actions.select",
+      ["h"] = "actions.parent",
+      ["q"] = { "actions.close", mode = "n" },
+      ["<C-p>"] = "actions.preview",
+    },
+
+    view_options = {
+      show_hidden = true,
+    },
+
+    lsp_file_methods = {
+      enabled = false,
+    },
+
+    preview_win = {
+      update_on_cursor_moved = true,
+      preview_method = "fast_scratch",
     },
   },
 }

@@ -23,7 +23,12 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end
     if vim.fn.argc() == 0 then
       vim.schedule(function()
-        require("oil").open(vim.fn.getcwd())
+        require("oil").open(vim.fn.getcwd(), {
+          preview = {
+            vertical = true,
+            split = "botright",
+          },
+        })
       end)
     end
   end,
