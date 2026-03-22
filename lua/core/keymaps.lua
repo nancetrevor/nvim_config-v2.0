@@ -12,9 +12,9 @@ map("n", "<leader>d]", vim.diagnostic.goto_next, opts)
 map("n", "<leader>rn", vim.lsp.buf.rename, opts)
 map("n", "<leader>q", ":q<CR>", opts)
 map("n", "<leader>wa", ":wa<CR>", opts)
-map("n", "sd", ":lua vim.lsp.buf.hover()<CR>", opts)
-map("n", "gd", ":lua vim.lsp.buf.definition()<cr>", opts)
-map("n", "fb", "<C-^>", opts)
+map("n", "<leader>sd", ":lua vim.lsp.buf.hover()<CR>", opts)
+map("n", "<leader>gd", ":lua vim.lsp.buf.definition()<CR>", opts)
+map("n", "<leader>gb", "<C-^>", opts)
 
 
 
